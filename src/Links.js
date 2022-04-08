@@ -11,6 +11,10 @@ function Links() {
     {
       link: "https://awesome-architecture.com/software-architecture/",
       description: "Awesome list of Software architecture",
+    },
+    {
+      link: "https://blog.kuzzle.io/tag/engineering",
+      description: "Kuzzle blog, You know for reading about my company",
     }
   ];
 

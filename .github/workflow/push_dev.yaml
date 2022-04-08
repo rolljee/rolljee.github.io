@@ -1,0 +1,26 @@
+name: Push main branche
+
+on:
+  push:
+    branches:
+      - develop
+
+
+jobs:
+  push_backend:
+    name: backend artefact
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Set up NodeJS
+        uses: actions/setup-node@v1.4.4
+        with:
+          node-version: "14"
+      
+      - name: Deploy new version to master
+        run: npm run deploy
