@@ -5,7 +5,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 function Project() {
   const projects = [
     {
-      link: "https://rolljee.github.io/ogame-ui/",
+      link: "/ogame-ui/",
       description: "Tooling UI for Ogame",
     },
     {
