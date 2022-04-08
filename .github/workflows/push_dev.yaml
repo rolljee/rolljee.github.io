@@ -17,7 +17,13 @@ jobs:
         uses: actions/setup-node@v1.4.4
         with:
           node-version: "14"
-      - name: Install deps
-        run: npm ci
-      - name: Deploy new version to master
-        run: npm run deploy
+      - name: Install and Build 🔧
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          branch: master
+          folder: build
