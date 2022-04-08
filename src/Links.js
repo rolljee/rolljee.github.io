@@ -8,6 +8,10 @@ function Links() {
       link: "https://www.scaleway.com/fr/livre-blanc-multi-cloud/",
       description: "Scaleway multicloud white book",
     },
+    {
+      link: "https://awesome-architecture.com/software-architecture/",
+      description: "Awesome list of Software architecture",
+    }
   ];
 
   return (
