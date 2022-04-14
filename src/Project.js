@@ -20,10 +20,6 @@ function Project() {
       link: "https://github.com/rolljee/js-scdl",
       description: "Javascript Wrapper for SoundCloud Downloader (scdl)",
     },
-    {
-      link: "https://github.com/rolljee/i18n-file-translator",
-      description: "i18n file translator using deepL",
-    },
   ];
 
   return (
