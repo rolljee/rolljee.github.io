@@ -1,0 +1,15 @@
+.font-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.font-description {
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 400;
+}
+
+.font-header {
+  font-family: 'Garamond', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
