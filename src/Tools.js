@@ -16,9 +16,14 @@ function Tools() {
       description: "With HashiCorp Terraform, provisioning and security can be automated with declarative infrastructure and policy as code. Infrastructure and policies are codified, shared, versioned, and executed within a workflow that is consistent across all infrastructure.",
     },
     {
-      title: "Ansible",
-      link: "https://www.ansible.com/",
-      description: "Red Hat® Ansible® Automation Platform elevates automation across your organization, expanding your possibilities. It's a flexible, security-focused foundation to build and deploy automation that helps your business accelerate, orchestrate, and innovate.",
+      title: "Excalidraw",
+      link: "https://excalidraw.com",
+      description: "Draw like what you want in a white canvas, pen and paper style",
+    },
+    {
+      title: "Erase.bg",
+      link: "https://www.erase.bg/fr",
+      description: "Remove background from any image",
     },
     {
       title: "Notion",
@@ -51,7 +56,7 @@ function Tools() {
     <Row>
       <Row className="text-center">
         <Col>
-          <h3 className="font-header">See here, some of the tools I use or used</h3>
+          <h3 className="font-header">Tools I use or used</h3>
         </Col>
       </Row>
       <Row>

@@ -33,7 +33,7 @@ function Project() {
     <Row>
       <Row className="text-center">
         <Col>
-          <h3 className="font-header">My projects</h3>
+          <h3 className="font-header">Projects</h3>
         </Col>
       </Row>
       <Row>

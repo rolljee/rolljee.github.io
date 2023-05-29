@@ -39,7 +39,7 @@ function Links() {
     <Row>
       <Row className="text-center">
         <Col>
-          <h3 className="font-header">See here, some usefull links and resources to read</h3>
+          <h3 className="font-header">Links and resources</h3>
         </Col>
       </Row>
       <Row>
