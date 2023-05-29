@@ -12,7 +12,7 @@ function App() {
     <Container>
       <Row className="row text-center">
         <Col className="col">
-          <img src="/intro.png" alt="intro.png" />
+          <img src="/Intro.png" alt="Intro.png" />
         </Col>
       </Row>
       <Row className="mt-4">
