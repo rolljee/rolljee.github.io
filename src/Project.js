@@ -27,6 +27,11 @@ function Project() {
       link: "https://github.com/rolljee/js-scdl",
       description: "Javascript Wrapper for SoundCloud Downloader (scdl)",
     },
+    {
+      title: "Soundtube",
+      link: "https://github.com/rolljee/soundtube",
+      description: "Youtube & Soundcloud downloader, you can now drop your links and download your music in mp3",
+    }
   ];
 
   return (
