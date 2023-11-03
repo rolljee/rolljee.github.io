@@ -1,11 +1,15 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
 
 import "./App.css";
-import Project from "./Project";
-import Tools from "./Tools";
-import Links from "./Links";
+import AboutMe from "./about-me/AboutMe";
+import Project from "./projects/Project";
+import Tools from "./tools/Tools";
+import Links from "./links/Links";
+
 
 function App() {
   return (
@@ -15,15 +19,26 @@ function App() {
           <img src="/Intro.png" alt="Intro.png" />
         </Col>
       </Row>
-      <Row className="mt-4">
-        <Project />
-      </Row>
-      <Row className="mt-4">
-        <Tools />
-      </Row>
-      <Row className="mt-4">
-        <Links />
-      </Row>
+      <Tabs
+        defaultActiveKey="projects"
+        id="default-tab"
+        className="mb-3"
+        justify
+      >
+        <Tab eventKey="projects" title="Projects">
+          <Project />
+        </Tab>
+        <Tab eventKey="tools" title="Tools">
+          <Tools />
+        </Tab>
+        <Tab eventKey="links" title="Links">
+          <Links />
+        </Tab>
+
+        <Tab eventKey="about-me" title="About me">
+          <AboutMe />
+        </Tab>
+      </Tabs>
     </Container>
   );
 }
