@@ -1,7 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 
 function NavBar() {
   return (
@@ -13,11 +12,9 @@ function NavBar() {
           <Nav className="me-auto">
             <Nav.Link href="/">Blog</Nav.Link>
             <Nav.Link href="/projects">My projects</Nav.Link>
+            <Nav.Link href="/tools">Tools</Nav.Link>
+            <Nav.Link href="/links">Links</Nav.Link>
             <Nav.Link href="/about-me">About me</Nav.Link>
-            <NavDropdown title="More" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/tools">Tools</NavDropdown.Item>
-              <NavDropdown.Item href="/links">Links</NavDropdown.Item>
-            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>

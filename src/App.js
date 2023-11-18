@@ -3,13 +3,14 @@ import { Container } from "react-bootstrap";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./App.css";
-import NavBar from "./components/NavBar/navbar";
+import NavBar from "./components/navbar";
 import ErrorPage from "./routes/error-page";
 import Project from "./projects/Project";
 import AboutMe from "./about-me/AboutMe";
 import Tools from "./tools/Tools";
 import Links from "./links/Links";
 import Blog from "./blog/Blog";
+import BlogItem from "./blog/BlogItem";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
   {
     path: "/links",
     element: <Links />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/blog/:id",
+    element: <BlogItem />,
     errorElement: <ErrorPage />,
   },
 ]);

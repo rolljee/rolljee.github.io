@@ -1,6 +1,6 @@
 import ListGroup from "react-bootstrap/ListGroup";
 import Image from "react-bootstrap/Image";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Badge, Stack } from "react-bootstrap";
 
 function listGroupItem(props) {
   const redirect = (p) => {
@@ -16,11 +16,21 @@ function listGroupItem(props) {
     >
       <Row description="horizontal" gap={3}>
         <Col xs={6} md={2}>
-          <Image src={props.image} rounded />
+          <Image src={props.image} rounded fluid />
         </Col>
         <Col xs={6} md={10} className="d-flex flex-column align-self-center">
           <h4 className="font-title">{props.title}</h4>
           <h6 className="font-description">{props.description}</h6>
+          <Stack direction="horizontal" gap={2} className="mt-2">
+            {props.tags.map((tag, idx) => {
+              console.log(tag);
+              return (
+                <Badge bg="primary" key={idx}>
+                  {tag}
+                </Badge>
+              );
+            })}
+          </Stack>
         </Col>
       </Row>
     </ListGroup.Item>
