@@ -4,7 +4,7 @@ import { Row, Col, Badge, Stack } from "react-bootstrap";
 
 function listGroupItem(props) {
   const redirect = (p) => {
-    window.open(`#${p.link}`, "_blank");
+    window.open(`${p.link}`, "_blank");
   };
 
   return (

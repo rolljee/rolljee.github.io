@@ -4,8 +4,8 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 
 import ListGroup from "react-bootstrap/ListGroup";
-import listGroupItem from "../components/ListGroupItem";
 import blogs from "./blogs.json";
+import listBlogItem from "../components/ListBlogItem";
 
 function Blog() {
   const [blogItems, setBlogItems] = useState(blogs);
@@ -36,7 +36,7 @@ function Blog() {
       </Form>
       <Col>
         <ListGroup variant="flush">
-          {blogItems.map((item) => listGroupItem(item))}
+          {blogItems.map((item) => listBlogItem(item))}
         </ListGroup>
       </Col>
     </Row>
