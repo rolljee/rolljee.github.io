@@ -1,58 +1,33 @@
 import * as React from "react";
 import { Container } from "react-bootstrap";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 
 import "./App.css";
 import NavBar from "./components/navbar";
-import ErrorPage from "./routes/error-page";
 import Project from "./projects/Project";
 import AboutMe from "./about-me/AboutMe";
 import Tools from "./tools/Tools";
 import Links from "./links/Links";
 import Blog from "./blog/Blog";
 import BlogItem from "./blog/BlogItem";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Blog />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/projects",
-    element: <Project />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/about-me",
-    element: <AboutMe />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/tools",
-    element: <Tools />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/links",
-    element: <Links />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/blog/:id",
-    element: <BlogItem />,
-    errorElement: <ErrorPage />,
-  },
-]);
+import ErrorPage from "./routes/error-page";
 
 function App() {
   return (
-    <React.StrictMode>
+    <HashRouter basename="/">
       <NavBar />
       <Container>
-        <RouterProvider router={router} />
+        <Routes>
+          <Route path="/" element={<Blog />} />
+          <Route path="projects" element={<Project />} />
+          <Route path="about-me" element={<AboutMe />} />
+          <Route path="tools" element={<Tools />} />
+          <Route path="links" element={<Links />} />
+          <Route path="blog/:id" element={<BlogItem />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
       </Container>
-    </React.StrictMode>
+    </HashRouter>
   );
 }
 

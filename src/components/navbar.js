@@ -11,10 +11,10 @@ function NavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Blog</Nav.Link>
-            <Nav.Link href="/projects">My projects</Nav.Link>
-            <Nav.Link href="/tools">Tools</Nav.Link>
-            <Nav.Link href="/links">Links</Nav.Link>
-            <Nav.Link href="/about-me">About me</Nav.Link>
+            <Nav.Link href="#/projects">My projects</Nav.Link>
+            <Nav.Link href="#/tools">Tools</Nav.Link>
+            <Nav.Link href="#/links">Links</Nav.Link>
+            <Nav.Link href="#/about-me">About me</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

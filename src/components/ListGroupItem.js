@@ -4,7 +4,7 @@ import { Row, Col, Badge, Stack } from "react-bootstrap";
 
 function listGroupItem(props) {
   const redirect = (p) => {
-    window.open(p.link, "_blank");
+    window.open(`#${p.link}`, "_blank");
   };
 
   return (
@@ -22,8 +22,7 @@ function listGroupItem(props) {
           <h4 className="font-title">{props.title}</h4>
           <h6 className="font-description">{props.description}</h6>
           <Stack direction="horizontal" gap={2} className="mt-2">
-            {props.tags.map((tag, idx) => {
-              console.log(tag);
+            {props.tags && props.tags.map((tag, idx) => {
               return (
                 <Badge bg="primary" key={idx}>
                   {tag}
