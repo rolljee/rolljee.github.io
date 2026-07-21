@@ -23,11 +23,11 @@ function App() {
             style={{ maxWidth: 960 }}
           >
             <Routes>
-              <Route path="/" element={<Blog />} />
-              <Route path="projects" element={<Project />} />
+              <Route path="/" element={<Project />} />
               <Route path="tools" element={<Tools />} />
               <Route path="links" element={<Links />} />
               <Route path="about-me" element={<AboutMe />} />
+              <Route path="blog" element={<Blog />} />
               <Route path="blog/:id" element={<BlogItem />} />
               <Route path="*" element={<ErrorPage />} />
             </Routes>

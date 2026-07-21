@@ -6,8 +6,7 @@ import { NavLink } from "react-router-dom";
 import { useTheme } from "../theme/ThemeContext";
 
 const links = [
-  { to: "/", label: "Blog", end: true },
-  { to: "/projects", label: "Projects" },
+  { to: "/", label: "Projects", end: true },
   { to: "/tools", label: "Tools" },
   { to: "/links", label: "Links" },
   { to: "/about-me", label: "About" },
