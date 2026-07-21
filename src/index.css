@@ -259,6 +259,119 @@ body {
   letter-spacing: -0.02em;
 }
 
+/* -------------------------------- CV --------------------------------- */
+.cv-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.92rem;
+}
+
+.cv-contact a,
+.cv-contact span {
+  color: var(--bs-secondary-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.cv-contact a:hover {
+  color: var(--brand);
+}
+
+.cv-section {
+  margin-top: 2.5rem;
+}
+
+.cv-section__title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--brand);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.cv-item {
+  position: relative;
+  padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-left: 2px solid var(--bs-border-color);
+}
+
+.cv-item:last-child {
+  padding-bottom: 0;
+}
+
+.cv-item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 0 4px var(--bs-body-bg);
+}
+
+.cv-item__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  align-items: baseline;
+}
+
+.cv-item__role {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.cv-item__org {
+  color: var(--brand);
+  font-weight: 500;
+}
+
+.cv-item__period {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--bs-secondary-color);
+  white-space: nowrap;
+}
+
+.cv-item__desc {
+  margin: 0.4rem 0 0;
+  color: var(--bs-secondary-color);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.cv-item__desc ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.cv-lang {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed var(--bs-border-color);
+}
+
+.cv-lang:last-child {
+  border-bottom: none;
+}
+
+.cv-lang__level {
+  color: var(--bs-secondary-color);
+  font-size: 0.9rem;
+}
+
 /* ------------------------------ Footer ------------------------------- */
 .app-footer {
   border-top: 1px solid var(--bs-border-color);

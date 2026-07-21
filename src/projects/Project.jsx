@@ -6,9 +6,9 @@ export default function Project() {
   return (
     <>
       <PageHeader
-        eyebrow="Portfolio"
-        title="My projects"
-        subtitle="Side projects and open-source tools I have built along the way."
+        eyebrow="Hi, I'm Ricky 👋"
+        title="Projects"
+        subtitle="Lead Software Engineer — backend & infrastructure. A selection of side projects and open-source tools I have built along the way."
       />
       <div className="d-flex flex-column gap-3">
         {projects.map((project) => (
