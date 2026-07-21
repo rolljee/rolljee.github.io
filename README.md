@@ -42,12 +42,10 @@ Content for the blog, projects, tools and links lives in the matching
 ## Deployment
 
 Pushing to the `develop` branch triggers the
-[`Build and deploy`](.github/workflows/push_dev.yaml) GitHub Action, which
-builds the site and publishes the `build/` folder to the `master` branch that
-GitHub Pages serves.
+[`Build and deploy`](.github/workflows/deploy.yml) GitHub Action, which builds
+the site and publishes it straight to GitHub Pages using the official
+`upload-pages-artifact` / `deploy-pages` actions (Pages source: **GitHub
+Actions**). The custom domain `blog.rolljee.fr` is kept via `public/CNAME`.
 
-You can also deploy manually:
-
-```bash
-npm run deploy
-```
+You can also trigger a deployment manually from the Actions tab
+("Run workflow").
