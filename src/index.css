@@ -1,0 +1,303 @@
+/* ------------------------------------------------------------------ *
+ *  Global design layer on top of Bootstrap 5.3
+ *  Theme-aware (light / dark via [data-bs-theme]) with a shared accent.
+ * ------------------------------------------------------------------ */
+
+:root {
+  --brand: #4e94d8;
+  --brand-strong: #2f7bc4;
+  --brand-soft: rgba(78, 148, 216, 0.12);
+
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", "Courier New", monospace;
+
+  --radius: 14px;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.08),
+    0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Bootstrap accent overrides */
+:root,
+[data-bs-theme="light"] {
+  --bs-primary: var(--brand);
+  --bs-primary-rgb: 78, 148, 216;
+  --bs-link-color: var(--brand-strong);
+  --bs-link-hover-color: var(--brand);
+  --bs-body-bg: #f7f9fc;
+  --bs-tertiary-bg: #ffffff;
+}
+
+[data-bs-theme="dark"] {
+  --bs-primary: var(--brand);
+  --bs-primary-rgb: 78, 148, 216;
+  --bs-link-color: #7fb6e6;
+  --bs-link-hover-color: #a7cef0;
+  --bs-body-bg: #0d1117;
+  --bs-body-color: #c9d1d9;
+  --bs-tertiary-bg: #161b22;
+  --bs-border-color: #262d36;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.5),
+    0 16px 40px rgba(0, 0, 0, 0.55);
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ------------------------------- Navbar ------------------------------- */
+.app-navbar {
+  backdrop-filter: saturate(180%) blur(10px);
+  background-color: color-mix(in srgb, var(--bs-tertiary-bg) 80%, transparent);
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.brand-dot {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--brand);
+  margin-right: 0.5rem;
+  box-shadow: 0 0 0 4px var(--brand-soft);
+}
+
+.app-navbar .nav-link {
+  font-weight: 500;
+  border-radius: 8px;
+  padding-inline: 0.75rem !important;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.app-navbar .nav-link:hover,
+.app-navbar .nav-link.active {
+  color: var(--brand) !important;
+  background: var(--brand-soft);
+}
+
+.theme-toggle {
+  border: 1px solid var(--bs-border-color);
+  background: transparent;
+  color: var(--bs-body-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--brand);
+  transform: translateY(-1px);
+}
+
+/* --------------------------- Section heading -------------------------- */
+.section-title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  color: var(--bs-secondary-color);
+  font-size: 0.98rem;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--brand);
+}
+
+/* ------------------------------- Cards ------------------------------- */
+.entry-card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--radius);
+  background: var(--bs-tertiary-bg);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.entry-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--brand);
+  color: inherit;
+}
+
+.entry-card__media {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: var(--brand-soft);
+}
+
+.entry-card__body {
+  min-width: 0;
+}
+
+.entry-card__title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0 0 0.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.entry-card__title .arrow {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  color: var(--brand);
+}
+
+.entry-card:hover .entry-card__title .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.entry-card__desc {
+  margin: 0;
+  color: var(--bs-secondary-color);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: var(--brand-soft);
+  color: var(--brand-strong);
+  border: 1px solid transparent;
+}
+
+[data-bs-theme="dark"] .tag {
+  color: #9cc7ec;
+}
+
+.tag--filter {
+  cursor: pointer;
+  border-color: var(--bs-border-color);
+  background: transparent;
+  transition: all 0.15s ease;
+}
+
+.tag--filter:hover {
+  border-color: var(--brand);
+}
+
+.tag--filter.is-active {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+/* ------------------------------- Hero -------------------------------- */
+.hero-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--bs-tertiary-bg);
+  box-shadow: var(--shadow-card), 0 0 0 2px var(--brand);
+}
+
+.hero-name {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.hero-lead {
+  font-size: 1.1rem;
+  color: var(--bs-secondary-color);
+  max-width: 60ch;
+}
+
+/* Blog article body */
+.article-body {
+  max-width: 72ch;
+  line-height: 1.7;
+}
+
+.article-body h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ------------------------------ Footer ------------------------------- */
+.app-footer {
+  border-top: 1px solid var(--bs-border-color);
+  color: var(--bs-secondary-color);
+  font-size: 0.9rem;
+}
+
+.app-footer a {
+  color: var(--bs-secondary-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.app-footer a:hover {
+  color: var(--brand);
+}
+
+/* ---------------------------- Utilities ------------------------------ */
+.fade-in {
+  animation: fadeIn 0.4s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
