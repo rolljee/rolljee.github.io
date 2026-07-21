@@ -1,8 +1,12 @@
 import PageHeader from "../components/PageHeader";
 
 const contact = [
-  { label: "Montpellier, France", href: null, icon: "📍" },
-  { label: "nriquelmebareiro@kuzzle.io", href: "mailto:nriquelmebareiro@kuzzle.io", icon: "✉️" },
+  { label: "Montpellier, Occitanie, France", href: null, icon: "📍" },
+  {
+    label: "n.riquelmebareiro@gmail.com",
+    href: "mailto:n.riquelmebareiro@gmail.com",
+    icon: "✉️",
+  },
   { label: "github.com/rolljee", href: "https://github.com/rolljee", icon: "💻" },
   {
     label: "LinkedIn",
@@ -13,43 +17,92 @@ const contact = [
 
 const experiences = [
   {
-    role: "Lead Software Engineer",
+    role: "Platform Engineer & Product Owner — Kuzzle PaaS",
     org: "Kuzzle",
-    period: "Present",
+    period: "Jan 2024 — Present",
     location: "Montpellier, France",
     bullets: [
-      "Lead backend and infrastructure work on an open-source IoT & data-management platform, with a strong focus on data sovereignty.",
-      "Build platforms and tooling that let engineering teams ship faster and scale with confidence.",
-      "Work daily with Node.js, Kubernetes, Docker and Terraform across the cloud stack.",
+      "Lead the vision, architecture and development of Kuzzle PaaS, an Internal Developer Platform (IDP) that simplifies deploying and operating IoT platforms across multiple clouds and on-premise.",
+      "Combine technical leadership with product ownership: define the roadmap and automate infrastructure provisioning, deployments, Kubernetes lifecycle, observability and security so teams ship production-ready environments in minutes.",
+      "Collaborate with leadership and sales on platform strategy, solution architecture, customer workshops and pre-sales.",
+    ],
+  },
+  {
+    role: "Lead DevOps Engineer",
+    org: "Kuzzle",
+    period: "Jan 2022 — Jan 2024",
+    location: "Montpellier, France",
+    bullets: [
+      "Designed, operated and continuously improved secure, reliable and scalable production infrastructure for Kuzzle's products and customer deployments.",
+      "Standardized CI/CD pipelines, automated infrastructure provisioning and strengthened observability across the organization.",
+      "Led customer migrations from traditional environments to Kubernetes-based architectures on public cloud and on-premise.",
+    ],
+  },
+  {
+    role: "Software Engineer — Core Product Developer",
+    org: "Kuzzle",
+    period: "Jan 2020 — Jan 2022",
+    location: "Montpellier, France",
+    bullets: [
+      "Designed and implemented core backend features of Kuzzle, an open-source backend platform for IoT applications.",
+      "Built and maintained the plugin ecosystem, designed REST & Realtime APIs, and helped shape the product's long-term technical direction.",
+      "Improved extensibility, developer experience, documentation and tooling across the open-source project.",
+    ],
+  },
+  {
+    role: "Software Developer — Node.js",
+    org: "Videomenthe",
+    period: "Apr 2015 — Jan 2020",
+    location: "Montpellier, France",
+    bullets: [
+      "Full-stack development of the Eolementhe media-workflow application (Node.js, ES6, ReactJS), enabling cloud video processing and delivery to TV channels.",
+      "Built REST & SOAP APIs and the iOS/Android application; deployed on AWS, Azure, Orange, OVH and ZAYO with Docker and Kubernetes (AKS & on-prem MicroK8s).",
+      "Set up continuous integration (Jenkins) and unit testing (Jest), plus supporting tools (license manager, Slack alerting plugins).",
     ],
   },
 ];
 
 const education = [
   {
-    role: "Engineering degree (BAC+5), Computer Science",
+    role: "Engineering degree — Software Development & Cloud Computing",
     org: "EPSI Montpellier",
     period: "2012 — 2017",
   },
+  {
+    role: "BTS SIO — IT Services for Organizations",
+    org: "EPSI Montpellier",
+    period: "2012 — 2014",
+  },
+  {
+    role: "Scientific Baccalauréat — Physics",
+    org: "Lycée Frédéric Bazille · Agropolis",
+    period: "2009 — 2012",
+  },
 ];
 
-const certifications = ["Cisco CCNA — Level 2 (2015)", "Cisco CCNA — Level 1"];
+const certifications = ["Cisco CCNA — Level 2", "Cisco CCNA — Level 1"];
 
 const skills = [
-  "Node.js",
-  "TypeScript",
+  "Platform Engineering (IDP)",
   "Kubernetes",
-  "Docker",
+  "Cloud Native",
+  "Multi-cloud & On-Prem",
+  "DevOps · GitOps · IaC",
   "Terraform",
-  "CI/CD",
-  "PostgreSQL",
-  "Cloud infrastructure",
-  "IoT platforms",
-  "System architecture",
+  "Distributed Systems",
+  "Elasticsearch",
+  "CI/CD & Automation",
+  "Developer Experience",
+  "Software Architecture",
+  "JavaScript / TypeScript",
+  "Node.js",
+  "Go",
+  "Python",
+  "Technical Leadership & Mentoring",
 ];
 
 const languages = [
-  { name: "French", level: "Native" },
+  { name: "French", level: "Native / Bilingual" },
   { name: "English", level: "Full professional proficiency" },
   { name: "Spanish", level: "Professional working proficiency" },
 ];
@@ -73,7 +126,7 @@ export default function AboutMe() {
         <img className="hero-avatar flex-shrink-0" src="/me.jpeg" alt="Ricky" />
         <div>
           <h2 className="hero-name h3 mb-1">Nicolas “Ricky” Riquelme Bareiro</h2>
-          <p className="text-secondary mb-3">Lead Software Engineer @ Kuzzle</p>
+          <p className="text-secondary mb-3">Platform Engineer @ Kuzzle</p>
           <div className="cv-contact">
             {contact.map((c) =>
               c.href ? (
@@ -81,7 +134,9 @@ export default function AboutMe() {
                   key={c.label}
                   href={c.href}
                   target={c.href.startsWith("http") ? "_blank" : undefined}
-                  rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  rel={
+                    c.href.startsWith("http") ? "noopener noreferrer" : undefined
+                  }
                 >
                   <span aria-hidden="true">{c.icon}</span>
                   {c.label}
@@ -100,18 +155,26 @@ export default function AboutMe() {
       {/* Summary */}
       <Section title="Profile">
         <p className="article-body mb-0">
-          I build platforms that enable engineering teams to deliver faster and
-          scale with confidence. Specialized in backend development and
-          infrastructure, I focus on IoT and cloud solutions with a strong
-          emphasis on data sovereignty. I never give up and always try to close
-          any subject I am involved in.
+          I build platforms that enable engineering teams to deliver faster,
+          scale with confidence, and focus on creating value instead of managing
+          infrastructure. My career began building cloud applications and APIs
+          with JavaScript and Node.js, then expanded to cloud infrastructure,
+          distributed systems, Kubernetes and Platform Engineering — bridging
+          software development and operations. At Kuzzle I've worn many hats
+          (Core Product Developer, DevOps Lead, Product Owner and Platform
+          Engineer) and led the design of Kuzzle PaaS, an Internal Developer
+          Platform that automates the deployment, operation and lifecycle of IoT
+          platforms across multiple clouds and on-premise. I care just as much
+          about enabling others: mentoring engineers, sharing knowledge and
+          establishing engineering best practices. I'm passionate about building
+          platforms that engineers love.
         </p>
       </Section>
 
       {/* Experience */}
       <Section title="Experience">
         {experiences.map((xp) => (
-          <div className="cv-item" key={xp.role + xp.org}>
+          <div className="cv-item" key={xp.role + xp.period}>
             <div className="cv-item__head">
               <p className="cv-item__role">
                 {xp.role} · <span className="cv-item__org">{xp.org}</span>
@@ -146,7 +209,7 @@ export default function AboutMe() {
       {/* Education */}
       <Section title="Education">
         {education.map((ed) => (
-          <div className="cv-item" key={ed.org}>
+          <div className="cv-item" key={ed.role}>
             <div className="cv-item__head">
               <p className="cv-item__role">
                 {ed.role} · <span className="cv-item__org">{ed.org}</span>
