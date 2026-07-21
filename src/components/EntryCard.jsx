@@ -1,19 +1,33 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+
+function CardMedia({ image, title }) {
+  const [failed, setFailed] = useState(false);
+
+  if (image && !failed) {
+    return (
+      <img
+        className="entry-card__media"
+        src={image}
+        alt=""
+        loading="lazy"
+        onError={() => setFailed(true)}
+      />
+    );
+  }
+
+  // Fallback: a tile with the first letter, keeps the layout consistent.
+  return (
+    <span className="entry-card__media entry-card__media--fallback" aria-hidden="true">
+      {title?.charAt(0).toUpperCase() || "•"}
+    </span>
+  );
+}
 
 function CardInner({ image, title, description, tags, showArrow }) {
   return (
     <>
-      {image ? (
-        <img
-          className="entry-card__media"
-          src={image}
-          alt=""
-          loading="lazy"
-          onError={(e) => {
-            e.currentTarget.style.visibility = "hidden";
-          }}
-        />
-      ) : null}
+      <CardMedia image={image} title={title} />
       <div className="entry-card__body">
         <h3 className="entry-card__title">
           {title}

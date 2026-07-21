@@ -158,6 +158,21 @@ body {
   background: var(--brand-soft);
 }
 
+.entry-card__media--fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--brand-strong);
+  border: 1px solid var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .entry-card__media--fallback {
+  color: #9cc7ec;
+}
+
 .entry-card__body {
   min-width: 0;
 }
