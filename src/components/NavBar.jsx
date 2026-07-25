@@ -3,7 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
 
-import { useTheme } from "../theme/ThemeContext";
+import { useTheme } from "../theme/theme-context";
 
 const links = [
   { to: "/", label: "Projects", end: true },
