@@ -52,6 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: write
     concurrency:
       group: promote-master
       cancel-in-progress: false
@@ -64,3 +65,11 @@ jobs:
       - name: Fast-forward master to develop
         run: |
           git push origin ${{ github.sha }}:refs/heads/master
+
+      # A push made with GITHUB_TOKEN does not trigger other workflows, so the
+      # Pages deployment has to be dispatched explicitly on the new master.
+      - name: Trigger the Pages deployment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run deploy.yml --ref master
