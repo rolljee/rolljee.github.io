@@ -10,4 +10,10 @@ export default defineConfig({
     // Keep the historical output folder so the deploy workflow stays unchanged.
     outDir: "build",
   },
+  test: {
+    environment: "jsdom",
+    globals: false,
+    setupFiles: ["./src/test/setup.js"],
+    css: true,
+  },
 });

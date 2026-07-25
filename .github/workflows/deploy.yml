@@ -1,9 +1,10 @@
-name: Build and deploy
+name: Deploy to GitHub Pages
 
+# master only ever receives commits already validated by the CI workflow.
 on:
   push:
     branches:
-      - develop
+      - master
   workflow_dispatch:
 
 # Permissions required by the official GitHub Pages deployment.

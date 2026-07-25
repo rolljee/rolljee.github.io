@@ -160,13 +160,13 @@ export default function AboutMe() {
           infrastructure. My career began building cloud applications and APIs
           with JavaScript and Node.js, then expanded to cloud infrastructure,
           distributed systems, Kubernetes and Platform Engineering — bridging
-          software development and operations. At Kuzzle I've worn many hats
+          software development and operations. At Kuzzle I&rsquo;ve worn many hats
           (Core Product Developer, DevOps Lead, Product Owner and Platform
           Engineer) and led the design of Kuzzle PaaS, an Internal Developer
           Platform that automates the deployment, operation and lifecycle of IoT
           platforms across multiple clouds and on-premise. I care just as much
           about enabling others: mentoring engineers, sharing knowledge and
-          establishing engineering best practices. I'm passionate about building
+          establishing engineering best practices. I&rsquo;m passionate about building
           platforms that engineers love.
         </p>
       </Section>
